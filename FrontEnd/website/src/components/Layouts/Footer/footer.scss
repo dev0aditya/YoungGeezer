@@ -1,0 +1,10 @@
+.footerContainer {
+  .footer-heading {
+    @apply font-semibold mb-1 text-base text-[#d2b48c];
+  }
+  ul {
+    .footer-links {
+      @apply text-[#f5f5dc]/[0.85] hover:text-[#f5f5dc]/[1] text-sm hover:underline w-fit;
+    }
+  }
+}

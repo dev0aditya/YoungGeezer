@@ -1,11 +1,12 @@
+import Footer from "./components/Layouts/Footer/Footer";
+import Header from "./components/Layouts/Header/Header";
 function App() {
-
   return (
     <>
-      <h1>Young Geezer</h1>
-      <h2>Young Geezer</h2>
+      <Header />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
