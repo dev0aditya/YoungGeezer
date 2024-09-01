@@ -4,7 +4,7 @@
   }
   ul {
     .footer-links {
-      @apply text-[#f5f5dc]/[0.85] hover:text-[#f5f5dc]/[1] text-sm hover:underline w-fit;
+      @apply text-[#f5f5dc]/[0.85] hover:text-[#f5f5dc]/[1] text-sm hover:underline hover:w-fit cursor-pointer w-fit;
     }
   }
 }

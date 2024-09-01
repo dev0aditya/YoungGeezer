@@ -2,12 +2,14 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="footerContainer text-sm px-6 pt-7 bg-[#006d5b] mt-14 md:mt-16 absolute w-full bottom-0 z-40 xl:px-36 2xl:px-48 3xl:px-60 4xl:px-72">
+    <div className="footerContainer text-sm px-6 pt-7 bg-[#006d5b] mt-14 md:mt-16 w-full xl:px-36 2xl:px-48 3xl:px-60 4xl:px-72">
       <div className="footerlinks grid grid-cols-2 md:grid-cols-3 mb-7 gap-y-2">
         <div className="category">
           <h4 className="footer-heading">Category</h4>
           <ul>
-            <li className="footer-links">Home</li>
+            <li className="footer-links">
+              <a href="amazon.com">Home</a>
+            </li>
             <li className="footer-links">Men</li>
             <li className="footer-links">Women</li>
             <li className="footer-links">New Arrival</li>
@@ -46,8 +48,7 @@ function Footer() {
           <span className="font-bold font-secondaryFont text-[#d2b48c]">
             Young Geezer
           </span>{" "}
-          Designed & Developed By{" "}
-          <span className="font-semibold">SPA Devs</span>
+          Designed & Developed By <span className="font-normal">SPA Dev`s</span>
         </p>
       </div>
     </div>

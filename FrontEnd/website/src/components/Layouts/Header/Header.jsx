@@ -1,25 +1,66 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { LuShoppingBag } from "react-icons/lu";
 import { IoPersonOutline } from "react-icons/io5";
-import { useState } from "react";
 import styled from "styled-components";
+import gsap from "gsap";
 
 function Header() {
   const [isActive, setIsActive] = useState(false);
+  const navModalRef = useRef(null);
+  const navModalWrapperRef = useRef(null);
 
-  const toggleHamburger = (e) => {
+  const toggleHamburger = () => {
     setIsActive(!isActive);
   };
+
+  const handleClickOutside = (e) => {
+    if (navModalRef.current && !navModalRef.current.contains(e.target)) {
+      setIsActive(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isActive) {
+      gsap.to(navModalRef.current, {
+        duration: 0.5,
+        x: 0,
+        opacity: 1,
+        display: "block",
+        ease: "power3.inOut",
+      });
+    } else {
+      gsap.to(navModalRef.current, {
+        duration: 0.5,
+        x: "-100%",
+        opacity: 1,
+        display: "none",
+        ease: "power3.inOut",
+      });
+    }
+  }, [isActive]);
+
+  useEffect(() => {
+    const wrapper = navModalWrapperRef.current;
+    if (wrapper) {
+      wrapper.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      if (wrapper) {
+        wrapper.removeEventListener("click", handleClickOutside);
+      }
+    };
+  }, []);
+
   return (
     <>
       <div className="header fixed w-screen z-50 top-0">
-        <div className="navigation flex justify-between px-6 py-4 items-center border-b-2 border-[#006d5b] drop-shadow-2xl bg-[#f7f7e7] lg:px-16 lg:py-6 xl:py-5">
+        <div className="navigation flex justify-between px-6 py-4 items-center drop-shadow-2xl bg-[#f6f6f1] lg:px-16 lg:py-6 xl:py-3">
           <div className="menu">
             <Hamburger
-              className={`hamburger ${
+              className={`hamburger cursor-pointer ${
                 isActive ? "is-active" : ""
-              } cursor-pointer`}
-              id="hamburger-11"
+              }`}
               onClick={toggleHamburger}
             >
               <span className="line"></span>
@@ -27,23 +68,23 @@ function Header() {
               <span className="line"></span>
             </Hamburger>
           </div>
-          <div className="logo font-secondaryFont font-bold text-2xl text-color-secondary lg:text-3xl absolute left-2/4 translate-x-[-50%]">
+          <div className="logo font-secondaryFont font-bold text-2xl text-color-secondary lg:text-3xl absolute left-2/4 translate-x-[-50%] cursor-pointer">
             YoungGeezer
           </div>
-          <div className="bag text-xl text-color-primary bg-[#006d5b] p-2 rounded-full lg:text-2xl lg:p-3 flex gap-6 xl:rounded-2xl">
-            <LuShoppingBag />
-            <IoPersonOutline className="hidden xl:block" />
+          <div className="bag text-xl text-color-primary bg-[#006d5b] p-2 rounded-full lg:text-2xl lg:p-3 flex gap-8 xl:rounded-2xl">
+            <LuShoppingBag className="cursor-pointer" />
+            <IoPersonOutline className="hidden xl:block cursor-pointer" />
           </div>
         </div>
         <div
+          ref={navModalWrapperRef}
           className={`navModal-wrapper h-screen w-screen ${
             isActive ? "is-active" : ""
           }`}
         >
           <div
-            className={`navModal bg-[#f7f7e7] relative w-full md:w-2/5 xl:w-1/4 h-screen ${
-              isActive ? "is-active" : ""
-            }`}
+            ref={navModalRef}
+            className="navModal bg-[#f6f6f1] relative w-full md:w-2/5 xl:w-1/4 h-screen"
           >
             <ul className="navLinks">
               <li>Mens</li>
@@ -59,10 +100,6 @@ function Header() {
 }
 
 const Hamburger = styled.div`
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-
   .line {
     width: 26px;
     height: 1.8px;
@@ -70,47 +107,11 @@ const Hamburger = styled.div`
     background-color: #006d5b;
     display: block;
     margin: 4px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-  }
 
-  .line:nth-child(2) {
-    width: 20px;
-  }
-
-  :hover {
-    cursor: pointer;
-  }
-
-  &.is-active {
-    transition: 0.5s ease-in-out;
-    animation: smallbig 0.3s forwards;
-  }
-
-  @keyframes smallbig {
-    0%,
-    100% {
-      -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1);
+    &:nth-child(2) {
+      width: 20px;
     }
-
-    50% {
-      -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-      -o-transform: scale(0);
-      transform: scale(0);
-    }
-  }
-
-  &.is-active .line:nth-child(1),
-  &.is-active .line:nth-child(2),
-  &.is-active .line:nth-child(3) {
-    -webkit-transition-delay: 0.2s;
-    -o-transition-delay: 0.2s;
-    transition-delay: 0.2s;
   }
 
   &.is-active .line:nth-child(2) {
@@ -118,16 +119,10 @@ const Hamburger = styled.div`
   }
 
   &.is-active .line:nth-child(1) {
-    -webkit-transform: translateY(5.5px) rotate(45deg);
-    -ms-transform: translateY(5.5px) rotate(45deg);
-    -o-transform: translateY(5.5px) rotate(45deg);
     transform: translateY(5.5px) rotate(45deg);
   }
 
   &.is-active .line:nth-child(3) {
-    -webkit-transform: translateY(-5.5px) rotate(-45deg);
-    -ms-transform: translateY(-5.5px) rotate(-45deg);
-    -o-transform: translateY(-5.5px) rotate(-45deg);
     transform: translateY(-5.5px) rotate(-45deg);
   }
 `;
