@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { LuShoppingBag } from "react-icons/lu";
-import { IoPersonOutline } from "react-icons/io5";
+import { CgProfile } from "react-icons/cg";
+import { IoSearch } from "react-icons/io5";
+
 import styled from "styled-components";
 import gsap from "gsap";
 
@@ -69,11 +72,12 @@ function Header() {
             </Hamburger>
           </div>
           <div className="logo font-secondaryFont font-bold text-2xl text-color-secondary lg:text-3xl absolute left-2/4 translate-x-[-50%] cursor-pointer">
-            YoungGeezer
+            <Link to="/">YoungGeezer</Link>
           </div>
           <div className="bag text-xl text-color-primary bg-[#006d5b] p-2 rounded-full lg:text-2xl lg:p-3 flex gap-8 xl:rounded-2xl">
+            <IoSearch className="cursor-pointer" />
             <LuShoppingBag className="cursor-pointer" />
-            <IoPersonOutline className="hidden xl:block cursor-pointer" />
+            <CgProfile className="hidden xl:block cursor-pointer" />
           </div>
         </div>
         <div
@@ -87,7 +91,9 @@ function Header() {
             className="navModal bg-[#f6f6f1] relative w-full md:w-2/5 xl:w-1/4 h-screen"
           >
             <ul className="navLinks">
-              <li>Mens</li>
+              <li>
+                <Link to="/collections/mens-overT-shirt">Mens</Link>
+              </li>
               <li>Womens</li>
               <li>Offers</li>
               <li>Orders</li>

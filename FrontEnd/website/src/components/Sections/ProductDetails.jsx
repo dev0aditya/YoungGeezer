@@ -1,7 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
-import DeliveryInfo from "../DeliveryInfo";
-import { productDescription } from "../../../utils/MockData";
+import DeliveryInfo from "./DeliveryInfo";
+import { productDescription } from "../../utils/MockData";
+import { DefaultButtonG } from "../UI/Buttons";
 
 function ProductDetails() {
   const prodImg = [
@@ -81,8 +82,8 @@ function ProductDetails() {
         </div> */}
 
         <div className="buyingOptions flex mt-8 items-center xl:w-full 3xl:mt-10">
-          <div className="buyNow ">Buy Now</div>
-          <div className="addToBag ">Add To Bag</div>
+          <DefaultButtonG value={"Buy Now"} />
+          <DefaultButtonG value={"Add to Bag"} />
         </div>
 
         <div className="productDescription px-6 w-full opacity-70 xl:mt-12 xl:text-base mt-10 3xl:text-lg">
@@ -90,7 +91,10 @@ function ProductDetails() {
           <ul>
             {Object.entries(productDescription).map(([key, value], index) => (
               <li key={index}>
-                {key}: <span className="font-light tracking-wide">{value}</span>
+                {key}:{" "}
+                <span className="font-light tracking-wide">
+                  {typeof value === "boolean" ? (value ? "Yes" : "No") : value}
+                </span>
               </li>
             ))}
           </ul>

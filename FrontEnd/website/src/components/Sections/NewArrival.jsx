@@ -40,7 +40,7 @@ function NewArrival() {
         breakpoint: 500,
         settings: {
           slidesToShow: 2.2,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
         },
       },
     ],

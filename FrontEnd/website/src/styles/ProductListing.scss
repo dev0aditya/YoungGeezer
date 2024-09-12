@@ -1,0 +1,41 @@
+.sortModal {
+  background: rgba(247, 247, 231, 0.349);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.8px);
+  -webkit-backdrop-filter: blur(5.8px);
+
+  .sortContainer {
+    .sortCommands {
+      .sortType {
+        @apply flex justify-between items-center mb-3;
+        .info {
+          @apply text-color-secondary flex items-center gap-3 text-xl;
+          p {
+            @apply text-black opacity-60 tracking-wide;
+          }
+        }
+        label {
+          input[type="checkbox"] {
+            appearance: none;
+            position: relative;
+          }
+          .checkbox {
+            position: absolute;
+            transform: translateX(-100%);
+            height: 1rem;
+            border-radius: 5px;
+            border: 2px solid #006d5b;
+            width: 1rem;
+            transition: 100ms ease-in;
+            cursor: pointer;
+          }
+
+          input:checked + .checkbox {
+            background: #006d5ba9;
+            border: 2px solid #006d5b;
+          }
+        }
+      }
+    }
+  }
+}
