@@ -76,7 +76,9 @@ function Header() {
           </div>
           <div className="bag text-xl text-color-primary bg-[#006d5b] p-2 rounded-full lg:text-2xl lg:p-3 flex gap-8 xl:rounded-2xl">
             <IoSearch className="cursor-pointer" />
-            <LuShoppingBag className="cursor-pointer" />
+            <Link to="/bag">
+              <LuShoppingBag className="cursor-pointer" />
+            </Link>
             <CgProfile className="hidden xl:block cursor-pointer" />
           </div>
         </div>

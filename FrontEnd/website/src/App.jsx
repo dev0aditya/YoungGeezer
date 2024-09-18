@@ -5,6 +5,8 @@ import HomePage from "./components/Pages/HomePage";
 import LoginPage from "./components/Pages/LoginPage";
 import ProductPage from "./components/Pages/ProductPage";
 import MensPage from "./components/Pages/MensPage";
+import BagPage from "./components/Pages/BagPage";
+import TermsAndCondition from "./components/Pages/TermsAndCondition";
 
 function App() {
   return (
@@ -31,6 +33,14 @@ export const AppRouter = createBrowserRouter([
       {
         path: "/productPage",
         element: <ProductPage />,
+      },
+      {
+        path: "/bag",
+        element: <BagPage />,
+      },
+      {
+        path: "/termsandcondition",
+        element: <TermsAndCondition />,
       },
     ],
   },
