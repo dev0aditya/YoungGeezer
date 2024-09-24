@@ -1,3 +1,56 @@
+.prodListing {
+  @media only screen and (min-width: 380px) {
+    .prodContainer {
+      .product {
+        @apply h-[25rem];
+      }
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    .prodContainer {
+      .product {
+        @apply h-[30rem];
+      }
+    }
+  }
+  @media only screen and (min-width: 1366px) {
+    .prodContainer {
+      .product {
+        @apply h-[32rem];
+      }
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+    .prodContainer {
+      .product {
+        @apply h-[29rem];
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1700px) {
+    .prodContainer {
+      .product {
+        @apply h-[30rem];
+      }
+    }
+  }
+  @media only screen and (min-width: 1800px) {
+    .prodContainer {
+      .product {
+        @apply h-[33rem];
+      }
+    }
+  }
+  @media only screen and (min-width: 1900px) {
+    .prodContainer {
+      .product {
+        @apply h-[36rem];
+      }
+    }
+  }
+}
+
 .sortModal {
   background: rgba(247, 247, 231, 0.349);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -33,6 +86,23 @@
           input:checked + .checkbox {
             background: #006d5ba9;
             border: 2px solid #006d5b;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sortModalDesktop {
+  .sortDropDown {
+    .sortmodal {
+      ul {
+        @apply flex flex-col gap-2;
+        li {
+          @apply flex items-center text-xl px-3 text-color-secondary hover:bg-[#e3e3df] cursor-pointer rounded-sm;
+
+          p {
+            @apply text-sm ml-2 text-black w-full;
           }
         }
       }

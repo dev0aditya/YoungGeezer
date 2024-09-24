@@ -230,3 +230,157 @@ export const accordian = {
     },
   ],
 };
+
+export const privacyPolicy = {
+  privacyPolicy: [
+    {
+      title: "Introduction",
+      content:
+        "We value the trust you place in us. That’s why we insist upon the highest standards for secure transactions and customer information privacy. Please read the following statement to learn about our information gathering and dissemination practices.",
+    },
+    {
+      title: "Note",
+      content:
+        "Our privacy policy is subject to change at any time without notice. To make sure you are aware of any changes, please review this policy periodically.",
+    },
+    {
+      title: "Agreement",
+      content:
+        "By visiting this Website or mobile application you agree to be bound by the terms and conditions of this Privacy Policy. If you do not agree please do not use or access our Website.",
+    },
+    {
+      title: "Consent",
+      content:
+        "By mere use of the Website, you expressly consent to our use and disclosure of your personal information in accordance with this Privacy Policy. This Privacy Policy is incorporated into and subject to the Terms of Use.",
+    },
+    {
+      title: "Collection of Personally Identifiable Information",
+      content:
+        "When you use our Website, we collect and store your personal information which is provided by you from time to time. Our primary goal in doing so is to provide you a safe, efficient, smooth, and customized experience.",
+    },
+    {
+      title: "Cookies and Tracking",
+      content:
+        "We use data collection devices such as 'cookies' to analyze web page flow, measure promotional effectiveness, and promote trust and safety. You may decline cookies if your browser permits.",
+    },
+    {
+      title: "Additional Information",
+      content:
+        "If you choose to buy on the Website, we collect information about your buying behaviour. Additionally, if you transact with us, we collect some additional information, such as a billing address, and payment details.",
+    },
+    {
+      title: "Use of Personal Information",
+      content:
+        "We use personal information to provide the services you request, resolve disputes, troubleshoot problems, help promote safe service, and customize your experience. We may also use your information for marketing purposes.",
+    },
+    {
+      title: "Sharing of Personal Information",
+      content:
+        "We may share personal information with corporate entities, affiliates, and third parties to comply with legal obligations, facilitate marketing, or prevent illegal activities. We do not disclose personal information without explicit consent.",
+    },
+    {
+      title: "Security",
+      content:
+        "Our Website has stringent security measures in place to protect your information from loss, misuse, and unauthorized access.",
+    },
+    {
+      title: "Your Consent",
+      content:
+        "By using the Website, you consent to the collection and use of your information as described in this Privacy Policy.",
+    },
+    {
+      title: "Policy Updates",
+      content:
+        "If we decide to change our privacy policy, we will post those changes on this page to keep you informed.",
+    },
+  ],
+};
+
+export const exchangePolicy = {
+  exchangePolicy: [
+    {
+      title: "terms",
+      content: [
+        "Exchanges are only applicable if a wrong size has been ordered, on the same product within a period of 15 days from the date of receiving the product. The shipping cost has to be borne by the customer.",
+        "Exchange will be provided only in cases where the product is damaged when received. (T&C applied)",
+        "As we do not have our own delivery service we rely on delivery partners like BlueDart, Delhivery, DTDC, etc. In case of an exchange, the Delivery partner charges us for reverse pickup from the customer location and then additional delivery charges for delivering a new product to the customer location again. As these charges are two-way, we request our customers to pay for one-way charges i.e. ₹100 (which will be credited back to the customer’s store wallet after product quality check is completed).",
+        "In the interests of hygiene, we may refuse returns where it’s obvious that the item has been worn, washed, or soiled. Defective products need not be sent back to us unless confirmed by the Customer Experience Team. (T&C applied)",
+        "If there is a manufacturing issue, or if you have any other query regarding this, you can contact us on the number or email us at krazedculture@gmail.com",
+        "In the interests of hygiene, masks, boxers, and shorts are not returnable. Stationary products like stickers are also part of no return/no exchange products.",
+      ],
+    },
+    {
+      title: "exchangeProcess",
+      content: [
+        "Exchanges are only applicable if a wrong size has been ordered, on the same product within a period of 15 days from the date of receiving the product. The shipping cost has to be borne by the customer.",
+        "You can initiate an exchange by applying for an exchange from your 'My Account' page. Once a request has been submitted, our team will assist you in completing the exchange process.",
+        "As we do not have our own delivery service we rely on delivery partners like DTDC, Delhivery, eKart, etc. In case of an exchange, the delivery partner charges us for reverse pickup from the customer location and then additional delivery charges for delivering a new product again to the customer location. As these charges are two-way, we request our customers to pay for one-way charges i.e. ₹100. The shipping cost has to be borne by the customer.",
+        "Please contact us on the number given on the website. Our team will help you.",
+      ],
+    },
+  ],
+};
+
+export const shippingPolicy = {
+  deliveryInformation: [
+    {
+      title: "How long will it take for my order to be delivered?",
+      content:
+        "Orders in India, once shipped, are typically delivered in 7-8 business days in metros, and 10-12 business days for the rest of India. Delivery time may vary depending upon the shipping address and other factors (public holidays, extreme weather conditions, etc.).\nPlease Note: Due to the ongoing pandemic, our courier partners are working with limited staff. Delivery of your orders may be delayed by up to 15 days.",
+    },
+    {
+      title: "When will my products on pre-order be shipped?",
+      content:
+        "We ship pre-order products on the date given in the product description, as far as possible. However, there may be a slight delay in shipping in case of an unforeseen surge in demand or any similar issue. Rest assured, our customer experience team will keep you updated on the status of your order.",
+    },
+    {
+      title: "Are there any additional shipping charges?",
+      content:
+        "Krazed Culture provides FREE shipping for COD orders above Rs. 1499 in India. For Pre-paid orders, a 5% discount is provided.",
+    },
+    {
+      title: "How do I track my order?",
+      content:
+        "You can track your order once it has been dispatched from our warehouse. An email and SMS will be sent with a link. You can also track it from your account on the website by selecting ‘Orders’ from the top right corner and then clicking on ‘Track Order’ for the respective Order ID.",
+    },
+    {
+      title: "What if my order is undelivered?",
+      content:
+        "For prepaid orders, if our courier partners are unable to deliver the product and they send it back to us, we will initiate reshipping for the product.",
+    },
+  ],
+};
+
+export const FAQPolicy = [
+  {
+    title: "Order Placement and Delivery FAQs",
+    content: [
+      {
+        question: "How do I place my order?",
+        answer:
+          "Browse through our wide range of products until you find something you like. After you’ve chosen what you want, select the relevant size, if applicable. You can check out our size chart for reference. Once you’re done, click the ‘Add To Cart’ button. After you have added all the products, click on the cart icon on the top right. You can either choose to continue shopping or confirm the order and click ‘Checkout’. From there, you can either login to your existing BonkersCorner account or simply continue as a ‘New User’ and create one. Once you’re done, proceed to checkout, confirm your shipping address, and select the desired payment method to confirm your order by clicking ‘Place Order’.",
+      },
+      {
+        question: "How will I know that my order is placed successfully?",
+        answer:
+          "Once you successfully place your order, you will receive a confirmation email with details of your order and your order ID. You’ll receive another email once your order is shipped out. All you have to do then is, sit back, relax, and wait for your awesome product(s) to arrive!",
+      },
+      {
+        question: "How do I receive my order?",
+        answer:
+          "We have tied up with several reputed courier companies, so your orders will be delivered right to your doorstep within 5-12 business days depending on where you live. All orders come in fully sealed packages to make sure that all your goods reach you in perfect condition.",
+      },
+      {
+        question:
+          "I tried placing my order using my debit card/credit card/net banking. The order was not successful but my money got deducted. What’s happening here?",
+        answer:
+          "As a first step, kindly check your bank account to ensure if your account has been debited. If your account has been debited after a payment failure, it is normally rolled back by banks within 10 business days. For any other assistance/issues you can write to us at krazedculture@gmail.com or call us on our helpline, and we’ll help sort things out.",
+      },
+      {
+        question: "How should I check the status of my order?",
+        answer:
+          "To find out when your order is arriving, you need to first log in to your account. Click on the icon to the left of the cart (located on the top right corner) and enter your details. Click on Orders to see the status of your current order (as well as your order history). You can also simply click on ‘Track Order’ on the top right, type in your order ID, and check your order status. After your order has been successfully placed, you will immediately receive a confirmation and order details via email and SMS. Once your products have been shipped, you will be notified again via email and SMS. In case there is any unusual event or complication that leads to a delay in shipping your order, you will immediately receive an update from our end- with reasons and the revised shipping and delivery timelines. If there are any other issues/delays that come up, or you need the order to be delivered urgently, write to us at krazedculture@gmail.com, we will see what we can do to help.",
+      },
+    ],
+  },
+];

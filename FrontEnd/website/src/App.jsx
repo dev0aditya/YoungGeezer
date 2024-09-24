@@ -7,6 +7,10 @@ import ProductPage from "./components/Pages/ProductPage";
 import MensPage from "./components/Pages/MensPage";
 import BagPage from "./components/Pages/BagPage";
 import TermsAndCondition from "./components/Pages/TermsAndCondition";
+import PrivacyPolicy from "./components/Pages/PrivacyPolicy";
+import ReturnPolicy from "./components/Pages/ReturnPolicy";
+import ShippingPolicy from "./components/Pages/ShippingPolicy";
+import FAQPage from "./components/Pages/FAQPage";
 
 function App() {
   return (
@@ -39,8 +43,28 @@ export const AppRouter = createBrowserRouter([
         element: <BagPage />,
       },
       {
+        path: "/login",
+        element: <LoginPage />,
+      },
+      {
         path: "/termsandcondition",
         element: <TermsAndCondition />,
+      },
+      {
+        path: "/privacypolicy",
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: "/returnPolicy",
+        element: <ReturnPolicy />,
+      },
+      {
+        path: "/shippingPolicy",
+        element: <ShippingPolicy />,
+      },
+      {
+        path: "/faq",
+        element: <FAQPage />,
       },
     ],
   },

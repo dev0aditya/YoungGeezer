@@ -29,11 +29,11 @@ function ProductBox({
         )}
       </div>
       <div className="dataBox px-2 mt-2">
-        <div className="title">
-          <TextLimiter text={title} desktopLimit={10} mobileLimit={18} />
+        <div className="title text-sm">
+          <TextLimiter text={title} desktopLimit={10} mobileLimit={17} />
         </div>
-        <div className="desc opacity-70 font-light">
-          <TextLimiter text={desc} desktopLimit={10} mobileLimit={18} />
+        <div className="desc opacity-70 font-light text-xs">
+          <TextLimiter text={desc} desktopLimit={10} mobileLimit={20} />
         </div>
         <div className="price mt-1 font-semibold text-[1.05rem] text-color-secondary">
           {priceDropped ? (
@@ -44,7 +44,7 @@ function ProductBox({
             `INR ${price}`
           )}
         </div>
-        <div className="warning text-sm text-red-400 mt-[-0.2rem]">
+        <div className="warning text-xs text-red-400 mt-[-0.2rem]">
           {stock < 15 ? "Only Few Left!" : ""}
         </div>
       </div>

@@ -5,6 +5,7 @@ import { homeBannerImgData } from "../../utils/MockData";
 function HomeBanner() {
   const settings = {
     dots: false,
+    fade: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,

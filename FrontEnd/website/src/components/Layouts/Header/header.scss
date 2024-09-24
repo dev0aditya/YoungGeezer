@@ -66,3 +66,41 @@
     transform: translateX(0%);
   }
 }
+
+.isactive {
+  .navigation {
+    .logo {
+      display: none;
+    }
+    .header-links {
+      width: 100%;
+      .inner-header-links {
+        width: 100%;
+        overflow: visible;
+        div {
+          input {
+            width: 100%;
+            @apply block transition-all duration-300 ease-in-out;
+          }
+        }
+        .search-dropdown {
+          @apply h-36 md:h-44 2xl:h-56 opacity-100 transition-all ease-in-out duration-200 overflow-y-auto;
+          ul {
+            li {
+              @apply border-b-2 py-1 px-1 last:border-b-0;
+            }
+          }
+        }
+
+        .search-dropdown::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        .search-dropdown::-webkit-scrollbar-thumb {
+          background-color: #0a6455;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}

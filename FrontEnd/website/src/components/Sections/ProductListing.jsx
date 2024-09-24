@@ -5,6 +5,7 @@ import ProductFilterBtn from "./ProductFilterBtn";
 import ProductSort from "./ProductSort";
 import SortModal from "./SortModal";
 import { gsap } from "gsap";
+import SortModalDesktop from "./SortModalDesktop";
 
 function ProductListing() {
   const [modalActive, setModalActive] = useState(false);
@@ -48,26 +49,33 @@ function ProductListing() {
   }, [modalActive]);
 
   return (
-    <div style={{ transition: "all 0.5s ease-in-out" }}>
-      <div className="NoOfProduct mt-20 mb-2 text-sm opacity-50 flex justify-end mx-5">
+    <div className="prodListing" style={{ transition: "all 0.5s ease-in-out" }}>
+      <div className="NoOfProduct mt-20 mb-2 text-sm opacity-50 flex justify-end mx-5 lg:mx-10 xl:mx-16">
         {productsData.length} Products
       </div>
-      <div className="grid grid-cols-2 gap-x-2 mx-5">
-        {productsData.map((product) => (
-          <ProductBox
-            className="h-[26rem]"
-            key={product.id}
-            img={product.img}
-            desc={product.desc}
-            alt={product.alt}
-            price={product.price}
-            priceDropped={product.priceDropped}
-            title={product.title}
-            stock={product.stock}
-          />
-        ))}
+      <div className="hidden mx-5 md:flex justify-end md:mb-4 lg:mx-10 xl:mx-16">
+        <SortModalDesktop />
       </div>
-      <div className="filterSec flex w-full justify-between items-center sticky bottom-0 mt-5">
+      <div className="md:flex mx-5 lg:mx-10 xl:mx-16">
+        <div className="hidden md:block md:w-1/5">wpw</div>
+        <div className="prodContainer md:w-4/5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-x-2">
+          {productsData.map((product) => (
+            <ProductBox
+              className="h-[22rem] product"
+              key={product.id}
+              img={product.img}
+              desc={product.desc}
+              alt={product.alt}
+              price={product.price}
+              priceDropped={product.priceDropped}
+              title={product.title}
+              stock={product.stock}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="filterSec flex w-full justify-between items-center sticky bottom-0 mt-5 md:hidden">
         <ProductSort showModal={showModal} />
         <ProductFilterBtn />
       </div>

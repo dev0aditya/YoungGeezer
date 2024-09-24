@@ -9,7 +9,7 @@ function Footer() {
           <h4 className="footer-heading">Category</h4>
           <ul>
             <li className="footer-links">
-              <a href="amazon.com">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li className="footer-links">Men</li>
             <li className="footer-links">Women</li>
@@ -21,16 +21,21 @@ function Footer() {
         <div className="policies">
           <h4 className="footer-heading">Policies</h4>
           <ul>
-            <li className="footer-links">Search</li>
             <li className="footer-links">
               <Link to="/termsandcondition">Terms and Condition</Link>
             </li>
-            <li className="footer-links">Privacy Policy</li>
-            <li className="footer-links">Return Policy</li>
-            <li className="footer-links">Shopping Policy</li>
-            <li className="footer-links">FAQ</li>
-            <li className="footer-links">Return your Order</li>
-            <li className="footer-links">Track your Order</li>
+            <li className="footer-links">
+              <Link to="/privacypolicy">Privacy Policy</Link>
+            </li>
+            <li className="footer-links">
+              <Link to="/returnpolicy">Return Policy</Link>
+            </li>
+            <li className="footer-links">
+              <Link to="/shippingPolicy">Shipping Policy</Link>
+            </li>
+            <li className="footer-links">
+              <Link to="/faq">FAQ</Link>
+            </li>
           </ul>
         </div>
         <div className="contact col-span-2 md:col-span-1">

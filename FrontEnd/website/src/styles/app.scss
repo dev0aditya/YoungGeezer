@@ -2,11 +2,32 @@
 
 @import "../components/Layouts/Footer/footer.scss";
 @import "../components/Layouts/Header/header.scss";
+@import "./ProductVideoHomePage.scss";
 @import "./ProductListing.scss";
 @import "./ProductDetail.scss";
 @import "./Login.scss";
 @import "./TermsAndCondition.scss";
+
 body {
   font-family: "Inter", sans-serif;
   background: #fcfcfc;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #04473c;
+  border: 0px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
