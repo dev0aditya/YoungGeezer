@@ -15,7 +15,9 @@ function Footer() {
             <li className="footer-links">Women</li>
             <li className="footer-links">New Arrival</li>
             <li className="footer-links">About us</li>
-            <li className="footer-links">Contact</li>
+            <li className="footer-links">
+              <Link to="/contact">Contact</Link>
+            </li>
           </ul>
         </div>
         <div className="policies">

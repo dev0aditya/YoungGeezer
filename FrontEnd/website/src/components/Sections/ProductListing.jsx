@@ -6,6 +6,7 @@ import ProductSort from "./ProductSort";
 import SortModal from "./SortModal";
 import { gsap } from "gsap";
 import SortModalDesktop from "./SortModalDesktop";
+import ProductFilterDesktop from "./ProductFilterDesktop";
 
 function ProductListing() {
   const [modalActive, setModalActive] = useState(false);
@@ -50,15 +51,17 @@ function ProductListing() {
 
   return (
     <div className="prodListing" style={{ transition: "all 0.5s ease-in-out" }}>
-      <div className="NoOfProduct mt-20 mb-2 text-sm opacity-50 flex justify-end mx-5 lg:mx-10 xl:mx-16">
+      <div className="NoOfProduct mt-20 mb-2 text-sm opacity-50 flex justify-end mx-5 lg:mx-10 xl:mx-16 2xl:mx-24">
         {productsData.length} Products
       </div>
-      <div className="hidden mx-5 md:flex justify-end md:mb-4 lg:mx-10 xl:mx-16">
+      <div className="hidden mx-5 md:flex justify-end md:mb-4 lg:mx-10 xl:mx-16 2xl:mx-24">
         <SortModalDesktop />
       </div>
-      <div className="md:flex mx-5 lg:mx-10 xl:mx-16">
-        <div className="hidden md:block md:w-1/5">wpw</div>
-        <div className="prodContainer md:w-4/5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-x-2">
+      <div className="md:flex mx-5 lg:mx-10 xl:mx-16 2xl:mx-24">
+        <div className="hidden md:block md:w-1/5 md:mr-4 xl:w-1/6 2xl:w-2/12">
+          <ProductFilterDesktop />
+        </div>
+        <div className="prodContainer md:w-4/5 xl:w-5/6 2xl:w-10/12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-x-2">
           {productsData.map((product) => (
             <ProductBox
               className="h-[22rem] product"

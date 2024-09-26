@@ -11,11 +11,15 @@ import PrivacyPolicy from "./components/Pages/PrivacyPolicy";
 import ReturnPolicy from "./components/Pages/ReturnPolicy";
 import ShippingPolicy from "./components/Pages/ShippingPolicy";
 import FAQPage from "./components/Pages/FAQPage";
+import ProfilePage from "./components/Pages/ProfilePage";
+import ContactPage from "./components/Pages/ContactPage";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
       <Header />
+      <Toaster position="top-right" />
       <Outlet />
       <Footer />
     </>
@@ -43,8 +47,16 @@ export const AppRouter = createBrowserRouter([
         element: <BagPage />,
       },
       {
+        path: "/profile",
+        element: <ProfilePage />,
+      },
+      {
         path: "/login",
         element: <LoginPage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
       },
       {
         path: "/termsandcondition",

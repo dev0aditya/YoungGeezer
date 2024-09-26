@@ -20,15 +20,15 @@ function Login({ setReqOTP, reqOTP }) {
     const userPayload = {
       email,
       password,
-      ...(isRegister && { phoneNumber }), // Only include full name and phone if registering
+      ...(isRegister && { phoneNumber }),
     };
 
     try {
       const response = await handleLogin(userPayload);
       if (response.ok) {
         const data = await response.json();
-        setUserData(data); // Set the user data
-        if (isRegister) setReqOTP(!reqOTP); // Trigger OTP if it's a registration
+        setUserData(data);
+        if (isRegister) setReqOTP(!reqOTP);
       } else {
         console.error("Error logging in or registering:", response.statusText);
       }

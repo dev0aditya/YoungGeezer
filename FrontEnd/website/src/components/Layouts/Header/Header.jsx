@@ -4,6 +4,7 @@ import { LuShoppingBag } from "react-icons/lu";
 import { CgProfile } from "react-icons/cg";
 import { IoSearch } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
+import logo from "../../../utils/Images/YOUNGGEZZER.png";
 
 import styled from "styled-components";
 import gsap from "gsap";
@@ -78,7 +79,9 @@ function Header() {
             </Hamburger>
           </div>
           <div className="logo font-secondaryFont font-bold text-2xl text-color-secondary lg:text-3xl absolute left-2/4 translate-x-[-50%] cursor-pointer">
-            <Link to="/">YoungGeezer</Link>
+            <Link to="/">
+              <img src={logo} alt="logo" width="60" height="60" />
+            </Link>
           </div>
           <div className="header-links text-xl text-color-primary bg-[#006d5b] p-2 rounded-full md:px-3 lg:text-2xl lg:p-3 lg:px-4 flex gap-5 xl:rounded-2xl ml-5 items-center">
             <div className="inner-header-links relative w-fit overflow-hidden">
@@ -133,11 +136,23 @@ function Header() {
           >
             <ul className="navLinks">
               <li>
-                <Link to="/collections/mens-overT-shirt">Mens</Link>
+                <Link to="/">Home</Link>
               </li>
-              <li>Womens</li>
-              <li>Offers</li>
-              <li>Orders</li>
+              {/* <li>
+                <Link to="/new-arrival">New Arrival</Link>
+              </li> */}
+              <li>
+                <Link to="/collections/mens-overT-shirt">Men</Link>
+              </li>
+              <li>
+                <Link to="/collections/mens-overT-shirt">Women</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
             </ul>
           </div>
         </div>
