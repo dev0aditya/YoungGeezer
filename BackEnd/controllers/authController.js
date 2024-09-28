@@ -7,7 +7,7 @@ const {
 } = require("../services/emailService");
 
 exports.register = async (req, res) => {
-  const { phone, email, password } = req.body;
+  const { name, phone, email, password } = req.body;
   try {
     const existingUser = await User.findOne({ $or: [{ email }, { phone }] });
     if (existingUser) {
@@ -21,6 +21,7 @@ exports.register = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await User.create({
+      name,
       phone,
       email,
       password: hashedPassword,

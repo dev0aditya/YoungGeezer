@@ -1,1 +1,0 @@
-Delete kardena baadme bud
