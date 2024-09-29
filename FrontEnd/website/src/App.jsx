@@ -19,8 +19,16 @@ function App() {
   return (
     <>
       <Header />
-      <Toaster position="top-right" />
-      <Outlet />
+      <div>
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            className: "mt-16",
+          }}
+        />
+      </div>
+
+      <Outlet></Outlet>
       <Footer />
     </>
   );

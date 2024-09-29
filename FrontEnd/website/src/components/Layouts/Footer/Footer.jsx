@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CopyToClipBoard } from "../../UI/CopyToClipBoard";
 
 function Footer() {
   return (
@@ -44,10 +45,22 @@ function Footer() {
           <h4 className="footer-heading">Contact Info:</h4>
           <ul>
             <li className="text-[#d2b48c]">
-              Email : <span className="footer-links">dummymail@gmail.com</span>
+              Email :{" "}
+              <span
+                className="footer-links"
+                onClick={(e) => CopyToClipBoard(e.target.innerText)}
+              >
+                dummymail@gmail.com
+              </span>
             </li>
             <li className="text-[#d2b48c]">
-              Mobile : <span className="footer-links">+9190000000</span>
+              Mobile :{" "}
+              <span
+                className="footer-links"
+                onClick={(e) => CopyToClipBoard(e.target.innerText)}
+              >
+                +9190000000
+              </span>
             </li>
           </ul>
         </div>

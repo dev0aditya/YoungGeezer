@@ -13,24 +13,34 @@ function ContactPage() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+
     if (validEmail && validMessage) {
       const formData = new FormData(event.target);
       formData.append("access_key", "9673ed21-4b09-47b8-9b0a-a69910021ad8");
 
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
+      toast.dismiss();
+      const toastId = toast.loading("Sending message...");
 
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: json,
-      }).then((res) => res.json());
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: json,
+        });
+        const data = await res.json();
 
-      if (res.success) {
-        toast.success("Message sent successfully");
+        if (data.success) {
+          toast.success("Message sent successfully", { id: toastId });
+        } else {
+          toast.error("Message failed to send", { id: toastId });
+        }
+      } catch (error) {
+        toast.error("An error occurred", { id: toastId });
       }
     }
   };

@@ -5,14 +5,240 @@ export const homeBannerImgData = [
   "https://images.unsplash.com/photo-1478803431644-b832801eefa7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
 
+export const usersData = [
+  {
+    id: 1,
+    name: "John Doe",
+    email: "john.doe@example.com",
+    password: "hashed_password_123",
+    addresses: [
+      {
+        street: "123 Main St",
+        city: "New York",
+        state: "NY",
+        zip: "10001",
+        country: "USA",
+      },
+      {
+        street: "456 Elm St",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11201",
+        country: "USA",
+      },
+    ],
+    phone: "+1-123-456-7890",
+    wishlist: [1, 5, 7],
+    cart: [
+      {
+        productId: 3,
+        quantity: 1,
+      },
+      {
+        productId: 6,
+        quantity: 2,
+      },
+    ],
+    orders: [
+      {
+        orderId: 1001,
+        products: [
+          {
+            productId: 2,
+            quantity: 1,
+            price: 1299,
+          },
+        ],
+        total: 1099,
+        orderDate: "2024-09-01",
+        deliveryStatus: "Delivered",
+        deliveryDate: "2024-15-01",
+      },
+      {
+        orderId: 23001,
+        products: [
+          {
+            productId: 2,
+            quantity: 1,
+            price: 1299,
+          },
+        ],
+        total: 1299,
+        orderDate: "2024-09-01",
+        deliveryStatus: "Delivered",
+      },
+      {
+        orderId: 2001,
+        products: [
+          {
+            productId: 2,
+            quantity: 1,
+            price: 1299,
+          },
+        ],
+        total: 1299,
+        orderDate: "2024-09-01",
+        deliveryStatus: "Delivered",
+      },
+      {
+        orderId: 2301,
+        products: [
+          {
+            productId: 2,
+            quantity: 1,
+            price: 1299,
+          },
+        ],
+        total: 1299,
+        orderDate: "2024-09-01",
+        deliveryStatus: "Delivered",
+      },
+      {
+        orderId: 20301,
+        products: [
+          {
+            productId: 2,
+            quantity: 1,
+            price: 1299,
+          },
+        ],
+        total: 1299,
+        orderDate: "2024-09-01",
+        deliveryStatus: "Delivered",
+      },
+      {
+        orderId: 201,
+        products: [
+          {
+            productId: 2,
+            quantity: 1,
+            price: 1299,
+          },
+        ],
+        total: 1299,
+        orderDate: "2024-09-01",
+        deliveryStatus: "Delivered",
+      },
+      {
+        orderId: 3001,
+        products: [
+          {
+            productId: 2,
+            quantity: 1,
+            price: 1299,
+          },
+        ],
+        total: 1299,
+        orderDate: "2024-09-01",
+        deliveryStatus: "Delivered",
+      },
+      {
+        orderId: 1043,
+        products: [
+          {
+            productId: 2,
+            quantity: 1,
+            price: 1299,
+          },
+        ],
+        total: 1299,
+        orderDate: "2024-09-01",
+        deliveryStatus: "In-Progress",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    email: "jane.smith@example.com",
+    password: "hashed_password_456",
+    addresses: [
+      {
+        street: "456 Oak St",
+        city: "San Francisco",
+        state: "CA",
+        zip: "94102",
+        country: "USA",
+      },
+      {
+        street: "789 Pine St",
+        city: "Los Angeles",
+        state: "CA",
+        zip: "90001",
+        country: "USA",
+      },
+    ],
+    phone: "+1-987-654-3210",
+    wishlist: [2, 4, 8],
+    cart: [
+      {
+        productId: 1,
+        quantity: 2,
+      },
+    ],
+    orders: [
+      {
+        orderId: 1002,
+        products: [
+          {
+            productId: 5,
+            quantity: 1,
+            price: 1399,
+          },
+        ],
+        total: 1399,
+        orderDate: "2024-09-05",
+        deliveryStatus: "Delivered",
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Jake Smith",
+    email: "jake.smith@example.com",
+    password: "hashed_password_456",
+    addresses: [
+      {
+        street: "456 Oak St",
+        city: "San Francisco",
+        state: "CA",
+        zip: "94102",
+        country: "USA",
+      },
+      {
+        street: "789 Pine St",
+        city: "Los Angeles",
+        state: "CA",
+        zip: "90001",
+        country: "USA",
+      },
+    ],
+    phone: "+1-987-654-3210",
+    wishlist: [2, 4, 8],
+    cart: [
+      {
+        productId: 1,
+        quantity: 2,
+      },
+    ],
+    orders: null,
+  },
+];
+
 export const productsData = [
   {
     id: 1,
     img: "//www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086",
+    moreImages: [
+      "//www.snitch.co.in/cdn/shop/files/img1.webp",
+      "//www.snitch.co.in/cdn/shop/files/img2.webp",
+      "//www.snitch.co.in/cdn/shop/files/img3.webp",
+    ],
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, aliquam!",
     alt: "snitch man",
     price: 1899,
     priceDropped: 1699,
+    shipping: 120,
     title: "Black Textured Casual Shirt",
     category: "Shirts",
     rating: 4.5,
@@ -29,10 +255,17 @@ export const productsData = [
   {
     id: 2,
     img: "https://www.snitch.co.in/cdn/shop/files/6bf2ba180070301e22a1ddef61c3e3b2.webp?v=1724416618",
+    moreImages: [
+      "https://www.snitch.co.in/cdn/shop/files/img4.webp",
+      "https://www.snitch.co.in/cdn/shop/files/img5.webp",
+      "https://www.snitch.co.in/cdn/shop/files/img6.webp",
+    ],
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, aliquam!",
     alt: "snitch man",
     price: 1299,
     priceDropped: 400,
+    shipping: 120,
+
     title: "Grey Cotton Casual Shirt",
     category: "Shirts",
     rating: 4.0,
@@ -49,6 +282,11 @@ export const productsData = [
   {
     id: 3,
     img: "https://www.snitch.co.in/cdn/shop/files/9ab72a02dbd3eb956337033a5a26fbfd.webp?v=1724416086",
+    moreImages: [
+      "https://www.snitch.co.in/cdn/shop/files/img7.webp",
+      "https://www.snitch.co.in/cdn/shop/files/img8.webp",
+      "https://www.snitch.co.in/cdn/shop/files/img9.webp",
+    ],
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, aliquam!",
     alt: "snitch man",
     price: 6199,
@@ -69,6 +307,11 @@ export const productsData = [
   {
     id: 4,
     img: "https://www.snitch.co.in/cdn/shop/files/2aba87d90311853e40793c5c7ba22246.webp?v=1724416057",
+    moreImages: [
+      "https://www.snitch.co.in/cdn/shop/files/img10.webp",
+      "https://www.snitch.co.in/cdn/shop/files/img11.webp",
+      "https://www.snitch.co.in/cdn/shop/files/img12.webp",
+    ],
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, aliquam!",
     alt: "snitch man",
     price: 119,
@@ -89,6 +332,11 @@ export const productsData = [
   {
     id: 5,
     img: "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/6a16266592049062199124aca92bb8a8_b558a789-13eb-4659-998c-efeb434a88cf.webp?v=1725081068&width=600",
+    moreImages: [
+      "https://cdn.shopify.com/s/files/img13.webp",
+      "https://cdn.shopify.com/s/files/img14.webp",
+      "https://cdn.shopify.com/s/files/img15.webp",
+    ],
     desc: "Khaki Self-Design Cuban Shirt",
     alt: "snitch man",
     price: 1399,
@@ -109,6 +357,11 @@ export const productsData = [
   {
     id: 6,
     img: "https://www.snitch.co.in/cdn/shop/files/35a2807db1003b53c7fcfbc94bfb7a25.webp?v=1725080384&width=1800",
+    moreImages: [
+      "https://www.snitch.co.in/cdn/shop/files/img16.webp",
+      "https://www.snitch.co.in/cdn/shop/files/img17.webp",
+      "https://www.snitch.co.in/cdn/shop/files/img18.webp",
+    ],
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, aliquam!",
     alt: "snitch man",
     price: 1199,
@@ -129,6 +382,11 @@ export const productsData = [
   {
     id: 7,
     img: "https://www.snitch.co.in/cdn/shop/files/ecbf02346d6bde1b96ac86a2feaab218.webp?v=1724926836&width=1800",
+    moreImages: [
+      "https://www.snitch.co.in/cdn/shop/files/img19.webp",
+      "https://www.snitch.co.in/cdn/shop/files/img20.webp",
+      "https://www.snitch.co.in/cdn/shop/files/img21.webp",
+    ],
     desc: "Blue Textured Printed Shirt",
     alt: "snitch man",
     price: 1199,
@@ -149,6 +407,11 @@ export const productsData = [
   {
     id: 8,
     img: "https://www.snitch.co.in/cdn/shop/files/936d35ebd9e2424f14b9d7caaf459c63.webp?v=1724926489&width=1800",
+    moreImages: [
+      "https://www.snitch.co.in/cdn/shop/files/img22.webp",
+      "https://www.snitch.co.in/cdn/shop/files/img23.webp",
+      "https://www.snitch.co.in/cdn/shop/files/img24.webp",
+    ],
     desc: "Teal Green Checks Oxford Shirt",
     alt: "snitch man",
     price: 1199,

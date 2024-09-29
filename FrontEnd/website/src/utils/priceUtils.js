@@ -4,5 +4,5 @@ export function PriceDropPercentage(price, priceDropped) {
   }
 
   const drop = price - priceDropped;
-  return (drop / price) * 100;
+  return Math.floor((drop / price) * 100);
 }
