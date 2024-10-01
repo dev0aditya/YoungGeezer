@@ -116,12 +116,14 @@ function Header() {
             <Link to="/bag">
               <div className="relative">
                 <span className="absolute bg-color-subPrimary rounded-full text-[0.5rem] font-bold w-0 h-0 p-[0.4rem] flex justify-center items-center text-color-secondary top-[-18%] right-[-20%] border-[1px] border-color-primary/60 md:top-[-12%]">
-                  4
+                  0
                 </span>
                 <LuShoppingBag className="cursor-pointer" />
               </div>
             </Link>
-            <CgProfile className="hidden xl:block cursor-pointer" />
+            <Link to="/profile" className="hidden xl:block cursor-pointer">
+              <CgProfile />
+            </Link>
           </div>
         </div>
         <div

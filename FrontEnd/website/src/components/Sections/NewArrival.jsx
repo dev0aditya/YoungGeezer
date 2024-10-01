@@ -3,7 +3,7 @@ import TextLimiter from "../UI/TextLimiter";
 import { productsData } from "../../utils/MockData";
 
 function NewArrival() {
-  const newest = productsData.slice(-4);
+  const newest = productsData.slice(-6);
 
   const settings = {
     dots: false,

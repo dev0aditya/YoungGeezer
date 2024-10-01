@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { usersData, productsData } from "../../utils/MockData";
 import OrderDetails from "./OrderDetails";
+import { Link } from "react-router-dom";
 
 function CompletedOrder() {
   let [displayId, setDisplayId] = useState(null);
@@ -48,11 +49,8 @@ function CompletedOrder() {
                         {order.total}
                       </span>
                     </h3>
-                    <h5
-                      className="text-xs underline text-color-secondary"
-                      onClick={() => displayDetail(order.orderId)}
-                    >
-                      Details
+                    <h5 className="text-xs underline text-color-secondary">
+                      <Link to="/profile/orders/orderId">Details</Link>
                     </h5>
                   </div>
                 </div>

@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
 import { PriceDropPercentage } from "../../utils/priceUtils";
 import { ButtonWithBorderFullWidth } from "../UI/Buttons";
+import { usersData, productsData } from "../../utils/MockData";
 
-function OrderDetails({ order, product, setDisplayId }) {
+function OrderDetails({ setDisplayId }) {
   const innerDetailRef = useRef(null);
+  const product = productsData[0];
 
   const handleClick = (e) => {
     if (innerDetailRef.current && !innerDetailRef.current.contains(e.target)) {
@@ -12,10 +14,7 @@ function OrderDetails({ order, product, setDisplayId }) {
   };
 
   return (
-    <div
-      className="orderDetail absolute top-0 right-0 left-0 bottom-0 mx-6 z-20"
-      onClick={handleClick}
-    >
+    <div className="orderDetail mt-24 mx-6 z-20" onClick={handleClick}>
       <div
         className="innerDetail w-full bg-[#e5e7eb] py-3 px-3"
         ref={innerDetailRef}

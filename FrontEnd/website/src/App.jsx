@@ -14,6 +14,10 @@ import FAQPage from "./components/Pages/FAQPage";
 import ProfilePage from "./components/Pages/ProfilePage";
 import ContactPage from "./components/Pages/ContactPage";
 import { Toaster } from "react-hot-toast";
+import OrderDetails from "./components/Sections/OrderDetails";
+import LoginYup from "./components/Sections/RegisterUser";
+import RegisterUser from "./components/Sections/RegisterUser";
+import OtpVerificationPage from "./components/Pages/OtpVerificationPage";
 
 function App() {
   return (
@@ -59,8 +63,20 @@ export const AppRouter = createBrowserRouter([
         element: <ProfilePage />,
       },
       {
+        path: "/profile/orders/orderId",
+        element: <OrderDetails />,
+      },
+      {
         path: "/login",
         element: <LoginPage />,
+      },
+      {
+        path: "/registeruser",
+        element: <RegisterUser />,
+      },
+      {
+        path: "/registeruser/otp",
+        element: <OtpVerificationPage />,
       },
       {
         path: "/contact",
