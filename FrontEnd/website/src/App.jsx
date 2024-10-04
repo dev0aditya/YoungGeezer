@@ -18,6 +18,8 @@ import OrderDetails from "./components/Sections/OrderDetails";
 import LoginYup from "./components/Sections/RegisterUser";
 import RegisterUser from "./components/Sections/RegisterUser";
 import OtpVerificationPage from "./components/Pages/OtpVerificationPage";
+import InProgressOrder from "./components/Sections/InProgressOrder";
+import ProgressOrderDetails from "./components/Sections/ProgressOrderDetails";
 
 function App() {
   return (
@@ -65,6 +67,10 @@ export const AppRouter = createBrowserRouter([
       {
         path: "/profile/orders/orderId",
         element: <OrderDetails />,
+      },
+      {
+        path: "/profile/inprogress/orderId",
+        element: <ProgressOrderDetails />,
       },
       {
         path: "/login",

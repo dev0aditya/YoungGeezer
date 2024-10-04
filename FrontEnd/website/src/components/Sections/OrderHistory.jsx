@@ -6,11 +6,11 @@ function OrderHistory() {
   let user = usersData[1];
   console.log(user);
   return (
-    <div className="px-6 py-4 relative">
-      <h2 className="text-xl opacity-70 tracking-normal font-medium">
+    <div className="px-6 py-4 relative xl:px-16">
+      <h2 className="text-xl lg:text-2xl opacity-70 tracking-normal font-medium">
         Order History
       </h2>
-      <div className="previousOrders ">
+      <div className="previousOrders">
         {user.orders ? (
           <OrderStatus />
         ) : (

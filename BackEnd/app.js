@@ -4,7 +4,7 @@ require("dotenv").config();
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const connectDb = require("./config/db");
-
+const cors = require("cors");
 const Product = require("./models/product");
 //Routes
 const authRoutes = require("./routes/authRoutes");
@@ -28,7 +28,16 @@ const api = process.env.API_URL;
 app.use(`${api}/auth`, authRoutes);
 app.use(`${api}/cart`, cartRoutes);
 app.use(`${api}/products`, productRoutes);
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Update this with your frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // Include credentials if needed (e.g., for cookies, sessions)
+    allowedHeaders: ["Content-Type", "Authorization"], // Add Content-Type here
+  })
+);
 
+app.options("*", cors());
 const productsData = [
   {
     img: "//www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086",

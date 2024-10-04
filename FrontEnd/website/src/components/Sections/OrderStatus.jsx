@@ -33,8 +33,14 @@ function OrderStatus() {
         className="statusButton flex gap-2 justify-center my-6"
         onClick={ChangeStatus}
       >
-        <ButtonWithBorder value={"Completed"} className={"text-sm"} />
-        <ButtonWithBorder value={"In-Progress"} className={"text-sm"} />
+        <ButtonWithBorder
+          value={"Completed"}
+          className={"text-xs xl:w-1/5 2xl:w-1/6 3xl:h-[2.5rem]"}
+        />
+        <ButtonWithBorder
+          value={"In-Progress"}
+          className={"text-xs xl:w-1/5 2xl:w-1/6 3xl:h-[2.5rem]"}
+        />
       </div>
       <div className="orderData">
         {completed ? <CompletedOrder /> : <InProgressOrder />}

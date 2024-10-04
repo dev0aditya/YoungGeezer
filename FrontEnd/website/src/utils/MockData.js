@@ -14,6 +14,7 @@ export const usersData = [
     addresses: [
       {
         street: "123 Main St",
+        locality: "bear complex",
         city: "New York",
         state: "NY",
         zip: "10001",
@@ -21,10 +22,19 @@ export const usersData = [
       },
       {
         street: "456 Elm St",
+        locality: "deer complex",
         city: "Brooklyn",
         state: "NY",
         zip: "11201",
         country: "USA",
+      },
+      {
+        street: "006 dElm Sst",
+        locality: "peer complex",
+        city: "drooklyn",
+        state: "SY",
+        zip: "19001",
+        country: "MUA",
       },
     ],
     phone: "+1-123-456-7890",

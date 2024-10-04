@@ -17,7 +17,7 @@ function CompletedOrder() {
   let user = usersData[0].orders;
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 min-h-96">
       {user?.length > 0 ? (
         user
           ?.filter((order) => order.deliveryStatus === "Delivered")
@@ -27,29 +27,31 @@ function CompletedOrder() {
               (product) => product.id === order.products[0].productId
             );
             return (
-              <div key={order.orderId}>
-                <div className="bg-[#f5f4f4] px-3 py-3 rounded-md flex gap-3">
-                  <div className="orderImg w-1/3">
+              <div key={order.orderId} className="flex items-center flex-col">
+                <div className="bg-[#f5f4f4] w-full px-3 py-3 rounded-md flex gap-3 md:w-1/2 items-center xl:w-2/5 2xl:w-2/6">
+                  <div className="orderImg w-1/3 md:w-2/5 xl:w-1/3">
                     <img
                       src={product.img}
                       alt="img"
                       width="100"
-                      className="object-cover h-20"
+                      className="object-cover h-24 md:h-28 md:w-full lg:h-32 object-top"
                     />
                   </div>
-                  <div className="w-2/3">
-                    <h4 className="text-xs opacity-90">{order.orderDate}</h4>
-                    <h3 className="opacity-90 text-sm">
+                  <div className="w-2/3 md:w-3/5 xl:w-2/3">
+                    <h4 className="text-xs opacity-90 lg:text-sm">
+                      {order.orderDate}
+                    </h4>
+                    <h3 className="opacity-90 text-sm lg:text-base">
                       Order ID: {order.orderId}
                     </h3>
 
-                    <h3 className="opacity-90 ">
+                    <h3 className="opacity-90 lg:text-lg">
                       Total Amount: INR{" "}
                       <span className="text-color-secondary font-bold">
                         {order.total}
                       </span>
                     </h3>
-                    <h5 className="text-xs underline text-color-secondary">
+                    <h5 className="text-xs lg:text-sm underline text-color-secondary mt-4">
                       <Link to="/profile/orders/orderId">Details</Link>
                     </h5>
                   </div>

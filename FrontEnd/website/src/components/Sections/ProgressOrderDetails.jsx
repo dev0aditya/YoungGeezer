@@ -3,7 +3,7 @@ import { ButtonWithBorderFullWidth } from "../UI/Buttons";
 import { productsData } from "../../utils/MockData";
 import { useNavigate } from "react-router-dom";
 
-function OrderDetails({ setDisplayId }) {
+function ProgressOrderDetails({ setDisplayId }) {
   const navigate = useNavigate();
   const [modal, setModal] = useState(false);
   const [confirm, setConfirm] = useState(false);
@@ -23,7 +23,7 @@ function OrderDetails({ setDisplayId }) {
 
   return (
     <div
-      className="flex justify-center mt-16 pt-8 px-6 z-20 relative "
+      className="mt-16 pt-8 px-6 z-20 relative flex justify-center"
       onClick={handleClick}
     >
       <div
@@ -58,14 +58,12 @@ function OrderDetails({ setDisplayId }) {
               className="prod-return absolute underline bottom-2 left-0 cursor-pointer"
               onClick={handleReturn}
             >
-              return
+              cancel
             </p>
           </div>
         </div>
         <div className="shipping-details mt-8 md:text-lg">
-          <p className="title tracking-wide font-semibold md:text-lg">
-            Shipping Details
-          </p>
+          <p className="title tracking-wide font-semibold">Shipping Details</p>
           <div className="shipping-address mt-2 border-2 border-color-subPrimary/70 rounded-lg p-2 text-sm md:text-base md:px-4 py-2">
             Aditya, Riddhi Apt, Nalasapara West, Shriprastha complex, Near fun
             fiesta, Thane, Maharashtra 401203, Adityamishra57608@gmail.com,
@@ -98,14 +96,17 @@ function OrderDetails({ setDisplayId }) {
           </div>
         </div>
         <div className="download-invoice mt-8">
-          <ButtonWithBorderFullWidth value={"Download"} />
+          <ButtonWithBorderFullWidth
+            value={"Download"}
+            className="pointer-events-none opacity-30"
+          />
         </div>
       </div>
       {modal && (
         <div className="returnPopup absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center orderDetail ">
           <div className="inner-returnPopup  bg-[#e9e7e7] w-4/5 h-40 px-4 py-3 rounded-lg md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5 ">
             <h1 className="text-xl tracking-wide font-light flex justify-between items-center opacity-70">
-              Confirm Return{" "}
+              Confirm Cancel
               <span
                 className="underline cursor-pointer text-sm"
                 onClick={handleReturn}
@@ -115,12 +116,12 @@ function OrderDetails({ setDisplayId }) {
             </h1>
             {confirm ? (
               <p className="h-2/3 justify-center flex items-center opacity-70 text-color-secondary font-semibold tracking-wide ">
-                Your return request has been accepted!!
+                Your cancel request has been accepted!!
               </p>
             ) : (
               <>
                 <p className="mt-2 opacity-70">
-                  Are you sure you want to return this product?
+                  Are you sure you want to cancel this product?
                 </p>
                 <ButtonWithBorderFullWidth
                   value={"Confirm"}
@@ -136,4 +137,4 @@ function OrderDetails({ setDisplayId }) {
   );
 }
 
-export default OrderDetails;
+export default ProgressOrderDetails;
