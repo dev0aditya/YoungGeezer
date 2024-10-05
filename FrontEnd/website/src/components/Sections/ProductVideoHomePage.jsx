@@ -4,7 +4,7 @@ import ReactPlayer from "react-player";
 function ProductVideoHomePage() {
   return (
     <>
-      <div className="h4 text-xl tracking-widest flex justify-center mt-16 mb-7 uppercase 4xl:text-2xl">
+      <div className="h4 text-xl tracking-widest flex justify-center mt-20 mb-7 uppercase 4xl:text-2xl">
         Know what u are buying
       </div>
       <div className="vidHomePage w-full h-[50vh] md:h-[70vh] overflow-hidden flex justify-center items-center">

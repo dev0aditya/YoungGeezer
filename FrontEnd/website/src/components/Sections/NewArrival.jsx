@@ -48,7 +48,7 @@ function NewArrival() {
 
   return (
     <>
-      <div className="h4 text-xl tracking-widest flex justify-center mt-14 mb-7 uppercase 4xl:text-2xl">
+      <div className="h4 text-xl tracking-widest flex justify-center mt-20 mb-7 uppercase 4xl:text-2xl">
         New Arrival‼️
       </div>
       <div className="arrivalContainer mb-7 px-4 4xl:px-16 xl:px-16 lg:px-10 md:px-6">

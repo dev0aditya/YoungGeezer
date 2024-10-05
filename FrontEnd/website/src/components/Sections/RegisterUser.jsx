@@ -58,7 +58,7 @@ function RegisterUserYup() {
       await validationSchema.validate(registerData, { abortEarly: false });
 
       const response = await axios.post("/api/v1/auth/register", registerData);
-      if (response.data.success) {
+      if (response.status === 200) {
         setOtpSent(true);
         alert("OTP sent to your email.");
       }
@@ -82,10 +82,9 @@ function RegisterUserYup() {
         email: registerData.email,
         otp: otp,
       });
-      if (response.data.success) {
+      if (response.status === 200) {
         setIsVerified(true);
         alert("OTP verified successfully!");
-        navigate("/dashboard");
       } else {
         alert("Invalid OTP");
       }
@@ -96,100 +95,125 @@ function RegisterUserYup() {
 
   return (
     <div className="loginContainer w-full h-screen flex justify-center items-center flex-col text-center">
-      <div className="heading">
-        <h2 className="text-[1.6rem] uppercase tracking-wide">Register</h2>
-        <p className="text-xs font-light tracking-wide capitalize">
-          Create an account to explore more!
-        </p>
-      </div>
-
       {!otpSent ? (
-        <form
-          className="mt-5 flex w-2/3 md:w-1/3 xl:w-1/4 3xl:w-1/5 flex-col items-center"
-          onSubmit={handleSubmit}
-        >
-          <div
-            className={`border-2 rounded-lg w-full mb-2 ${
-              errors?.name ? "border-red-400" : ""
-            }`}
-          >
-            <input
-              className="p-[0.3rem] w-full pl-3 font-light text-lg bg-transparent focus:outline-none"
-              placeholder="Full Name"
-              name="name"
-              value={registerData.name}
-              onChange={handleChange}
-              type="text"
-            />
+        <div className="w-full flex flex-col items-center">
+          <div className="heading">
+            <h2 className="text-[1.6rem] uppercase font-medium tracking-tight font-secondaryFont">
+              Register
+            </h2>
+            <p className="text-xs font-light tracking-wide capitalize">
+              Create an account to explore more!
+            </p>
           </div>
-
-          <div
-            className={`border-2 rounded-lg w-full mb-2 ${
-              errors?.email ? "border-red-400" : ""
-            }`}
+          <form
+            className="mt-5 flex w-2/3 md:w-1/3 xl:w-1/4 3xl:w-1/5 flex-col items-center"
+            onSubmit={handleSubmit}
           >
-            <input
-              className="p-[0.3rem] w-full font-light pl-3 text-lg bg-transparent focus:outline-none"
-              placeholder="joe@gmail.com"
-              type="email"
-              name="email"
-              value={registerData.email}
-              onChange={handleChange}
-            />
-          </div>
+            <div
+              className={`border-2 rounded-lg w-full mb-2 ${
+                errors?.name ? "border-red-400" : ""
+              }`}
+            >
+              <input
+                className="p-[0.3rem] w-full pl-3 font-light text-lg bg-transparent focus:outline-none"
+                placeholder="Full Name"
+                name="name"
+                value={registerData.name}
+                onChange={handleChange}
+                type="text"
+              />
+            </div>
 
-          <div
-            className={`border-2 rounded-lg w-full mb-2 ${
-              errors?.phone ? "border-red-400" : ""
-            }`}
-          >
-            <input
-              className="p-[0.3rem] w-full pl-3 font-light text-lg bg-transparent focus:outline-none"
-              placeholder="Phone Number"
-              type="tel"
-              name="phone"
-              value={registerData.phone}
-              onChange={handleChange}
-            />
-          </div>
+            <div
+              className={`border-2 rounded-lg w-full mb-2 ${
+                errors?.email ? "border-red-400" : ""
+              }`}
+            >
+              <input
+                className="p-[0.3rem] w-full font-light pl-3 text-lg bg-transparent focus:outline-none"
+                placeholder="joe@gmail.com"
+                type="email"
+                name="email"
+                value={registerData.email}
+                onChange={handleChange}
+              />
+            </div>
 
-          <div
-            className={`border-2 rounded-lg w-full mb-2 ${
-              errors?.password ? "border-red-400" : ""
-            }`}
-          >
-            <input
-              className="p-[0.3rem] w-full font-light pl-3 text-lg bg-transparent focus:outline-none"
-              placeholder="Password"
-              type="password"
-              name="password"
-              value={registerData.password}
-              onChange={handleChange}
-            />
-          </div>
+            <div
+              className={`border-2 rounded-lg w-full mb-2 ${
+                errors?.phone ? "border-red-400" : ""
+              }`}
+            >
+              <input
+                className="p-[0.3rem] w-full pl-3 font-light text-lg bg-transparent focus:outline-none"
+                placeholder="Phone Number"
+                type="tel"
+                name="phone"
+                value={registerData.phone}
+                onChange={handleChange}
+              />
+            </div>
 
-          <DefaultButtonG
-            type="submit"
-            value={"Proceed"}
-            className="mt-5 text-md h-[2.5rem] text-sm 3xl:h-11"
-          />
-        </form>
+            <div
+              className={`border-2 rounded-lg w-full mb-2 ${
+                errors?.password ? "border-red-400" : ""
+              }`}
+            >
+              <input
+                className="p-[0.3rem] w-full font-light pl-3 text-lg bg-transparent focus:outline-none"
+                placeholder="Password"
+                type="password"
+                name="password"
+                value={registerData.password}
+                onChange={handleChange}
+              />
+            </div>
+
+            <DefaultButtonG
+              type="submit"
+              value={"Proceed"}
+              className="mt-5 text-md h-[2.5rem] text-sm 3xl:h-11"
+            />
+          </form>
+        </div>
       ) : (
-        <form onSubmit={handleOtpVerification}>
-          <input
-            className="p-[0.3rem] w-full pl-3 font-light text-lg bg-transparent focus:outline-none"
-            placeholder="Enter OTP"
-            value={otp}
-            onChange={(e) => setOtp(e.target.value)}
-            type="text"
-            required
-          />
-          <DefaultButtonG
-            type="submit"
-            value={"Verify OTP"}
-            className="mt-5 text-md h-[2.5rem] text-sm 3xl:h-11"
-          />
-        </form>
+        <div>
+          <div className="heading">
+            <h2 className="text-[1.6rem] uppercase font-medium tracking-tight font-secondaryFont">
+              Please Enter OTP for
+              <span className="text-color-secondary"> verification</span>
+            </h2>
+            <p className="text-xs tracking-wide mt-1 opacity-70">
+              Verification code has been sent to your Email
+            </p>
+            <p className="text-xs tracking-wide mt-1 opacity-70">
+              {registerData.email}
+            </p>
+          </div>
+          <div className="optInput flex flex-col mt-7 items-center">
+            <form
+              onSubmit={handleOtpVerification}
+              className="flex flex-col items-center"
+            >
+              <input
+                type="number"
+                className="border-2 rounded-xl w-fit p-2 pl-3 text-xl bg-transparent focus:outline-none text-center tracking-[0.5rem]"
+                placeholder="OTP"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                required
+              />
+              <DefaultButtonG
+                type="submit"
+                value={"Submit"}
+                className="mt-4 text-sm w-3/5 h-[2.7rem]"
+              />
+            </form>
+            <p className="mt-2 opacity-70 text-sm">
+              Didn't receive the OTP? Resend in 01:00
+            </p>
+          </div>
+        </div>
       )}
 
       {isVerified && <p>Your account has been successfully registered!</p>}

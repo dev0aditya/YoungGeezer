@@ -15,13 +15,15 @@ function ProfilePage() {
           <IoLogOutOutline />
         </p>
       </div>
-      <OrderHistory />
-      <div className="px-6">
-        <h2 className="text-xl lg:text-2xl opacity-70 tracking-normal font-medium mt-5">
-          Address
-        </h2>
-        <p className="text-xs opacity-50">Default address</p>
-        <AddressContainer />
+      <div>
+        <OrderHistory />
+        <div className="px-6">
+          <h2 className="text-xl lg:text-2xl opacity-70 tracking-normal font-medium mt-5">
+            Address
+          </h2>
+          <p className="text-xs opacity-50">Default address</p>
+          <AddressContainer />
+        </div>
       </div>
     </>
   );
