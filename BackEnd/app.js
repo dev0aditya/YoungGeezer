@@ -58,7 +58,7 @@ const productsData = [
     },
   },
   {
-    img: "//example.com/men1.jpg",
+    img: "//www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086",
     desc: "Classic white cotton shirt perfect for formal and casual events.",
     alt: "Men's white shirt",
     price: 1499,
@@ -76,7 +76,7 @@ const productsData = [
     },
   },
   {
-    img: "//example.com/men2.jpg",
+    img: "//www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086",
     desc: "Comfortable and breathable joggers for daily wear.",
     alt: "Men's grey joggers",
     price: 999,
@@ -94,7 +94,7 @@ const productsData = [
     },
   },
   {
-    img: "//example.com/men3.jpg",
+    img: "//www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086",
     desc: "Stylish blue denim jacket with button-down design.",
     alt: "Men's denim jacket",
     price: 2499,
@@ -112,7 +112,7 @@ const productsData = [
     },
   },
   {
-    img: "//example.com/men4.jpg",
+    img: "//www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086",
     desc: "Soft and durable sneakers, perfect for daily use.",
     alt: "Men's black sneakers",
     price: 1999,
@@ -130,7 +130,7 @@ const productsData = [
     },
   },
   {
-    img: "//example.com/women1.jpg",
+    img: "https://www.snitch.co.in/cdn/shop/files/519bb59dc056f31fe4d199d937913767_1800x1800.jpg?v=1728022612",
     desc: "Elegant floral printed summer dress with a relaxed fit.",
     alt: "Women's floral dress",
     price: 1799,
@@ -148,7 +148,7 @@ const productsData = [
     },
   },
   {
-    img: "//example.com/women2.jpg",
+    img: "https://www.snitch.co.in/cdn/shop/files/519bb59dc056f31fe4d199d937913767_1800x1800.jpg?v=1728022612",
     desc: "Soft cashmere sweater ideal for cold weather.",
     alt: "Women's pink sweater",
     price: 2999,
@@ -166,7 +166,7 @@ const productsData = [
     },
   },
   {
-    img: "//example.com/women3.jpg",
+    img: "https://www.snitch.co.in/cdn/shop/files/519bb59dc056f31fe4d199d937913767_1800x1800.jpg?v=1728022612",
     desc: "High-waisted denim jeans with a classic straight-leg fit.",
     alt: "Women's blue jeans",
     price: 1399,
@@ -184,7 +184,7 @@ const productsData = [
     },
   },
   {
-    img: "//example.com/women4.jpg",
+    img: "https://www.snitch.co.in/cdn/shop/files/519bb59dc056f31fe4d199d937913767_1800x1800.jpg?v=1728022612",
     desc: "Comfortable and stylish sneakers, perfect for everyday use.",
     alt: "Women's white sneakers",
     price: 2299,

@@ -30,10 +30,10 @@ function ProductBox({
       </div>
       <div className="dataBox px-2 mt-2">
         <div className="title text-sm">
-          <TextLimiter text={title} desktopLimit={10} mobileLimit={17} />
+          <TextLimiter text={title} desktopLimit={25} mobileLimit={17} />
         </div>
         <div className="desc opacity-70 font-light text-xs">
-          <TextLimiter text={desc} desktopLimit={10} mobileLimit={20} />
+          <TextLimiter text={desc} desktopLimit={35} mobileLimit={20} />
         </div>
         <div className="price mt-1 font-semibold text-[1.05rem] text-color-secondary">
           {priceDropped ? (
