@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const connectDb = require("./config/db");
 const cors = require("cors");
 const Product = require("./models/product");
-//Routes
+//Routesgit
 const authRoutes = require("./routes/authRoutes");
 const cartRoutes = require("./routes/cartRoutes");
 const productRoutes = require("./routes/productRoutes");
