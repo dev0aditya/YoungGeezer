@@ -10,6 +10,7 @@ const cartSchema = new mongoose.Schema({
         required: true,
       },
       quantity: { type: Number, required: true, default: 1 },
+      status: { type: String, enum: ["cart", "bag"], default: "cart" },
     },
   ],
 });

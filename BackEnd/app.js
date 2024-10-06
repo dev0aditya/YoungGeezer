@@ -1,22 +1,33 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
+const path = require("path");
+
 require("dotenv").config();
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const connectDb = require("./config/db");
-const cors = require("cors");
+
 const Product = require("./models/product");
-//Routesgit
+//Routes
 const authRoutes = require("./routes/authRoutes");
 const cartRoutes = require("./routes/cartRoutes");
 const productRoutes = require("./routes/productRoutes");
 
-// Load environment variables
+app.use(
+  cors({
+    origin: "http://localhost:5173", //Url to be updated later with actual link
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
+app.options("*", cors());
 //MongoDb Connection
 connectDb();
 
 //middleware
+// Handle all OPTIONS requests globally
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,22 +39,25 @@ const api = process.env.API_URL;
 app.use(`${api}/auth`, authRoutes);
 app.use(`${api}/cart`, cartRoutes);
 app.use(`${api}/products`, productRoutes);
-app.use(
-  cors({
-    origin: "http://localhost:5173", // Update this with your frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true, // Include credentials if needed (e.g., for cookies, sessions)
-    allowedHeaders: ["Content-Type", "Authorization"], // Add Content-Type here
-  })
-);
+app.use((req, res, next) => {
+  res.status(404).json({ message: "Route not found" });
+});
 
-app.options("*", cors());
 const productsData = [
   {
-    img: "//www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086",
+    img: "//www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086", // Main image
+    //Array of images to add
+    images: [
+      "image1-url.jpg",
+      "image2-url.jpg",
+      "image3-url.jpg",
+      "image4-url.jpg",
+    ],
+
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, aliquam!",
     alt: "snitch man",
-    price: 1899,
+    price: 1899, // Discounted price
+    actualMrp: 3000, // Actual MRP
     title: "Black Textured Casual Shirt",
     category: "Shirts",
     stock: 12,
@@ -52,153 +66,9 @@ const productsData = [
       material: "Cotton",
       fit: "Slim Fit",
       color: "Black",
-      sizes: ["S", "M", "L", "XL"],
+
       care: "Machine wash cold with like colors",
       delivery: "Free delivery within 5-7 business days.",
-    },
-  },
-  {
-    img: "//www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086",
-    desc: "Classic white cotton shirt perfect for formal and casual events.",
-    alt: "Men's white shirt",
-    price: 1499,
-    title: "White Formal Shirt",
-    category: "Shirts",
-    stock: 10,
-    gender: "Men",
-    details: {
-      material: "Cotton",
-      fit: "Regular Fit",
-      color: "White",
-      sizes: ["S", "M", "L", "XL"],
-      care: "Machine wash cold with like colors",
-      delivery: "Free delivery within 3-5 business days.",
-    },
-  },
-  {
-    img: "//www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086",
-    desc: "Comfortable and breathable joggers for daily wear.",
-    alt: "Men's grey joggers",
-    price: 999,
-    title: "Grey Joggers",
-    category: "Pants",
-    stock: 15,
-    gender: "Men",
-    details: {
-      material: "Polyester Blend",
-      fit: "Slim Fit",
-      color: "Grey",
-      sizes: ["M", "L", "XL"],
-      care: "Machine wash warm with like colors",
-      delivery: "Free delivery within 5-7 business days.",
-    },
-  },
-  {
-    img: "//www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086",
-    desc: "Stylish blue denim jacket with button-down design.",
-    alt: "Men's denim jacket",
-    price: 2499,
-    title: "Blue Denim Jacket",
-    category: "Jackets",
-    stock: 5,
-    gender: "Men",
-    details: {
-      material: "Denim",
-      fit: "Regular Fit",
-      color: "Blue",
-      sizes: ["L", "XL"],
-      care: "Dry clean only",
-      delivery: "Free delivery within 3-5 business days.",
-    },
-  },
-  {
-    img: "//www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086",
-    desc: "Soft and durable sneakers, perfect for daily use.",
-    alt: "Men's black sneakers",
-    price: 1999,
-    title: "Black Casual Sneakers",
-    category: "Footwear",
-    stock: 8,
-    gender: "Men",
-    details: {
-      material: "Synthetic",
-      fit: "True to size",
-      color: "Black",
-      sizes: ["42", "43", "44"],
-      care: "Wipe with a damp cloth",
-      delivery: "Free delivery within 7-10 business days.",
-    },
-  },
-  {
-    img: "https://www.snitch.co.in/cdn/shop/files/519bb59dc056f31fe4d199d937913767_1800x1800.jpg?v=1728022612",
-    desc: "Elegant floral printed summer dress with a relaxed fit.",
-    alt: "Women's floral dress",
-    price: 1799,
-    title: "Floral Summer Dress",
-    category: "Dresses",
-    stock: 12,
-    gender: "Women",
-    details: {
-      material: "Chiffon",
-      fit: "Loose Fit",
-      color: "Floral",
-      sizes: ["S", "M", "L"],
-      care: "Hand wash cold",
-      delivery: "Free delivery within 5-7 business days.",
-    },
-  },
-  {
-    img: "https://www.snitch.co.in/cdn/shop/files/519bb59dc056f31fe4d199d937913767_1800x1800.jpg?v=1728022612",
-    desc: "Soft cashmere sweater ideal for cold weather.",
-    alt: "Women's pink sweater",
-    price: 2999,
-    title: "Pink Cashmere Sweater",
-    category: "Sweaters",
-    stock: 7,
-    gender: "Women",
-    details: {
-      material: "Cashmere",
-      fit: "Regular Fit",
-      color: "Pink",
-      sizes: ["M", "L"],
-      care: "Dry clean only",
-      delivery: "Free delivery within 3-5 business days.",
-    },
-  },
-  {
-    img: "https://www.snitch.co.in/cdn/shop/files/519bb59dc056f31fe4d199d937913767_1800x1800.jpg?v=1728022612",
-    desc: "High-waisted denim jeans with a classic straight-leg fit.",
-    alt: "Women's blue jeans",
-    price: 1399,
-    title: "Blue High-Waisted Jeans",
-    category: "Jeans",
-    stock: 20,
-    gender: "Women",
-    details: {
-      material: "Denim",
-      fit: "Straight Fit",
-      color: "Blue",
-      sizes: ["S", "M", "L", "XL"],
-      care: "Machine wash warm with like colors",
-      delivery: "Free delivery within 5-7 business days.",
-    },
-  },
-  {
-    img: "https://www.snitch.co.in/cdn/shop/files/519bb59dc056f31fe4d199d937913767_1800x1800.jpg?v=1728022612",
-    desc: "Comfortable and stylish sneakers, perfect for everyday use.",
-    alt: "Women's white sneakers",
-    price: 2299,
-    title: "White Casual Sneakers",
-    category: "Footwear",
-    stock: 9,
-    gender: "Women",
-    details: {
-      material: "Synthetic",
-      fit: "True to size",
-      color: "White",
-      sizes: ["38", "39", "40"],
-      care: "Wipe with a damp cloth",
-      delivery: "Free delivery within 7-10 business days.",
     },
   },
 ];

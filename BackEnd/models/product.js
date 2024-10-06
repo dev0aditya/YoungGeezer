@@ -1,10 +1,12 @@
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
-  img: { type: String, required: true },
+  img: { type: String, required: true }, // main image
+  images: [{ type: String }], //Array of Additional images
   desc: { type: String, required: true },
   alt: { type: String, required: true },
   price: { type: Number, required: true },
+  actualMrp: { type: Number, required: true },
   title: { type: String, required: true },
   category: { type: String, required: true },
   stock: { type: Number, required: true },
@@ -13,7 +15,7 @@ const productSchema = new mongoose.Schema({
     material: String,
     fit: String,
     color: String,
-    sizes: [String],
+    sizes: { type: [String], default: ["S", "M", "L", "XL", "XXL"] },
     care: String,
     delivery: String,
   },
